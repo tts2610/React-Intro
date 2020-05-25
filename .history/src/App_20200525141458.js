@@ -14,9 +14,9 @@ const choices = {
 function App() {
   return (
     <div className="App">
-      <ChoiceCard title="You" winner={false} imgURL={choices.rock} />
-      <ChoiceCard title="Computer" winner={true} imgURL={choices.paper} />
-    </div>
+  <ChoiceCard title="You" winner={false} imgURL={choices.rock} />
+  <ChoiceCard title="Computer" winner={true} imgURL={choices.paper} />
+</div>
   );
 }
 
