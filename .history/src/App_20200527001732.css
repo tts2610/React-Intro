@@ -79,7 +79,7 @@ h1 {
     width: 400px;
     height: 300px;
     border-radius: 10px;
-    overflow: hidden;
+    /* overflow: hidden; */
     padding: 2rem;
     padding-bottom: 50px;
 }

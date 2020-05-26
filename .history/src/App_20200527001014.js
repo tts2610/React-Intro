@@ -20,10 +20,10 @@ export default class App extends Component{
   constructor(props){
     super(props);
     this.state = {
-      isActive:false,
+      isStart:false,
       isPlayPressed:false,
-      me:{winner:3,imgURL:""},
-      computer:{winner:3,imgURL:""},
+      me:{winner:2,imgURL:""},
+      computer:{winner:2,imgURL:""},
       history:[]
     }
   }
@@ -61,12 +61,12 @@ export default class App extends Component{
   }
 
   handleStartGame = () =>{
-    this.setState({isActive:true});
+    this.setState({isStart:true});
   }
 
   render(){
 
-    if(!this.state.isActive){
+    if(!this.state.isStart){
       // return(<div className="center">
       //     <button onClick={this.handleStartGame}>Press here to start!!!</button>
       // </div>)

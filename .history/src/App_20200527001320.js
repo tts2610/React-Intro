@@ -22,8 +22,8 @@ export default class App extends Component{
     this.state = {
       isActive:false,
       isPlayPressed:false,
-      me:{winner:3,imgURL:""},
-      computer:{winner:3,imgURL:""},
+      me:{winner:2,imgURL:""},
+      computer:{winner:2,imgURL:""},
       history:[]
     }
   }
@@ -70,7 +70,7 @@ export default class App extends Component{
       // return(<div className="center">
       //     <button onClick={this.handleStartGame}>Press here to start!!!</button>
       // </div>)
-      return (<div className="center" onClick={this.handleStartGame}>
+      return (<div className={this.state.isActive ? 'your_className': "center"} onClick={this.handleStartGame}>
       <button className="learn-more">
       <span className="circle" aria-hidden="true">
         <span className="icon arrow"></span>

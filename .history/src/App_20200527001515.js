@@ -22,8 +22,8 @@ export default class App extends Component{
     this.state = {
       isActive:false,
       isPlayPressed:false,
-      me:{winner:3,imgURL:""},
-      computer:{winner:3,imgURL:""},
+      me:{winner:2,imgURL:""},
+      computer:{winner:2,imgURL:""},
       history:[]
     }
   }

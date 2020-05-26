@@ -267,3 +267,7 @@ button:hover .button-text {
         justify-self: center;
     }
 } */
+
+.history-box {
+    overflow-y: scroll;
+}

@@ -13,17 +13,14 @@ const choices = {
   scissor: "http://www.pngmart.com/files/1/Scissors-PNG-Pic.png"
 };
 
-
-
 export default class App extends Component{
     // const [choiceDic,setChoice] = useState({me:{winner:1,imgURL:choices.rock},computer:{winner:0,imgURL:choices.scissor}})
   constructor(props){
     super(props);
     this.state = {
-      isActive:false,
-      isPlayPressed:false,
-      me:{winner:3,imgURL:""},
-      computer:{winner:3,imgURL:""},
+      isStart:false,
+      me:{winner:1,imgURL:"http://www.pngmart.com/files/1/Scissors-PNG-Pic.png"},
+      computer:{winner:0,imgURL:"http://pngimagesfree.com/Paper/Thumb/blank-note-paper-free-clipa.png"},
       history:[]
     }
   }
@@ -60,26 +57,18 @@ export default class App extends Component{
     
   }
 
-  handleStartGame = () =>{
-    this.setState({isActive:true});
-  }
-
   render(){
 
-    if(!this.state.isActive){
-      // return(<div className="center">
-      //     <button onClick={this.handleStartGame}>Press here to start!!!</button>
-      // </div>)
-      return (<div className="center" onClick={this.handleStartGame}>
-      <button className="learn-more">
-      <span className="circle" aria-hidden="true">
-        <span className="icon arrow"></span>
-      </span>
-      <span className="button-text">Start Game</span>
-    </button>
+    if(!this.state.isStart){
+      return(<div class="type-2">
+      <div>
+        <a href="" className="btn btn-1">
+          <span className="txt">Hover me</span>
+          <span className="round"><i class="fa fa-chevron-right"></i></span>
+        </a>
+      </div>
     </div>)
     }
-      
     return (
       <div className="App">
         <div className="row">
