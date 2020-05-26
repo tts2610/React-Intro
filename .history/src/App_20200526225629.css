@@ -117,9 +117,4 @@ h1 {
 .resultInner {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.resultContainer {
-    justify-content: center;
 }

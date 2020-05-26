@@ -81,7 +81,7 @@ h1 {
     border-radius: 10px;
     overflow: hidden;
     padding: 2rem;
-    padding-bottom: 50px;
+    margin-bottom: 50px;
 }
 
 .rainbow::before {
@@ -117,9 +117,4 @@ h1 {
 .resultInner {
     display: flex;
     align-items: center;
-    justify-content: center;
-}
-
-.resultContainer {
-    justify-content: center;
 }

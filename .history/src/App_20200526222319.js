@@ -3,7 +3,6 @@ import './App.css';
 import ChoiceCard from './components/ChoiceCard';
 import Button from './components/Button';
 import Result from './components/Result';
-import History from './components/History';
 
 
 const choices = {
@@ -20,7 +19,6 @@ export default class App extends Component{
     this.state = {
       me:{winner:1,imgURL:"http://www.pngmart.com/files/1/Scissors-PNG-Pic.png"},
       computer:{winner:0,imgURL:"http://pngimagesfree.com/Paper/Thumb/blank-note-paper-free-clipa.png"},
-      history:[]
     }
   }
 
@@ -43,15 +41,15 @@ export default class App extends Component{
         myWinnerState = 0;
     }
     else{ 
-        computerWinnerState = 2;
-        myWinnerState = 2;
+        computerWinnerState = 0;
+        myWinnerState = 0;
     }
     this.setState({
       me: {winner:myWinnerState,imgURL:choices[myChoice]},
-      computer:{winner:computerWinnerState,imgURL:random[0]},
-      history:[...this.state.history,[myWinnerState,computerWinnerState]]
+      computer:{winner:computerWinnerState,imgURL:random[0]}
     },()=>{
-      console.log(this.state.history)
+      if(this.state.me.winner===1&&this.state.computer.winner===0) alert("you win!!!");
+      else alert("you loose!");
     });
     
   }
@@ -72,15 +70,7 @@ export default class App extends Component{
         <Button type="rock" handleClick={this.handleClick}/>
         <Button type="paper" handleClick={this.handleClick}/>
         <Button type="scissor" handleClick={this.handleClick}/>
-        </div>
-        <div className="row mx-auto resultContainer py-5">
-          <div className="col-md-3 rainbow mr-5 resultInner">
-          <Result result={[this.state.me.winner,this.state.computer.winner]}/>
-          </div>
-          <div className="col-md-3 rainbow">
-            <History historyList={this.state.history}/>
-          </div>
-        
+        <Result result={[this.state.me.winner,this.state.computer.winner]}/>
         </div>
       </div>
     );

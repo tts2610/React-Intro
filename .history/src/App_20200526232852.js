@@ -49,7 +49,7 @@ export default class App extends Component{
     this.setState({
       me: {winner:myWinnerState,imgURL:choices[myChoice]},
       computer:{winner:computerWinnerState,imgURL:random[0]},
-      history:[...this.state.history,[myWinnerState,computerWinnerState]]
+      history:[...this.state.history,[this.state.me.winner,this.state.computer.winner]]
     },()=>{
       console.log(this.state.history)
     });

@@ -48,10 +48,10 @@ export default class App extends Component{
     }
     this.setState({
       me: {winner:myWinnerState,imgURL:choices[myChoice]},
-      computer:{winner:computerWinnerState,imgURL:random[0]},
-      history:[...this.state.history,[myWinnerState,computerWinnerState]]
+      computer:{winner:computerWinnerState,imgURL:random[0]}
     },()=>{
-      console.log(this.state.history)
+      // if(this.state.me.winner===1&&this.state.computer.winner===0) alert("you win!!!");
+      // else alert("you loose!");
     });
     
   }
