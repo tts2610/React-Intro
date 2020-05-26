@@ -1,0 +1,34 @@
+import React , { useState } from 'react';
+import './App.css';
+import ChoiceCard from './components/ChoiceCard';
+
+const choices = {
+  rock:
+    "https://opengameart.org/sites/default/files/forum-attachments/very%20simple%20rock_0.png",
+  paper: "http://pngimagesfree.com/Paper/Thumb/blank-note-paper-free-clipa.png",
+  scissor: "http://www.pngmart.com/files/1/Scissors-PNG-Pic.png"
+};
+
+function App() {
+  const [choiceDic,setChoice] = useState({})
+  return (
+    <div className="App">
+      <div className="row">
+        <div className="col-6">
+            <ChoiceCard title="You" winner={choiceDic.winner} imgURL={choiceDic.imgURL} />
+        </div>
+        <div className="col-6">
+            <ChoiceCard title="Computer" winner={1} imgURL={choices.paper} />
+        </div>
+      </div>
+      
+      <div className="row rowOfButtons">
+      <button type="button" className="btn btn-info ml-4" onClick={()=>setChoice({winner:1,imgURL:choices.rock})}>Rock!</button>
+      <button type="button" className="btn btn-info ml-5" onClick={()=>setChoice({winner:1,imgURL:choices.paper})}>Paper!</button>
+      <button type="button" className="btn btn-info ml-5" onClick={()=>setChoice({winner:1,imgURL:choices.scissor})}>Scissor!</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
